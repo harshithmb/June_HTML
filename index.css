@@ -1,0 +1,31 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar{
+   border-bottom: 1px solid;
+   padding: 20px;
+   margin: 0;
+}
+
+.li-item{
+    display: inline;
+    font-size: 20px;
+    padding: 0 20px 20px;
+}
+
+#title, .navbar, .product-title{
+    text-align: center;
+}
+
+.product{
+    display: inline-block;
+    margin: 0 10px;
+    /* width: 200px;
+    height: 200px; */
+}
+
+.product img{
+    width: 200px;
+    height: 200px;
+}
