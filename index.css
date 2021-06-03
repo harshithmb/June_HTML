@@ -34,6 +34,21 @@ body{
     cursor: not-allowed;
 }
 
+.btn-click:hover{
+    box-shadow: -1px 11px 5px blue
+}
+
 .name:hover{
     background-color: blanchedalmond;
+}
+
+table, th, td, tr {
+    border: 1px solid;
+    border-collapse: collapse;
+    font-size:16px;
+    padding:15px;
+}
+
+th, .items-head, .total, .tax, .subTotal{
+    background-color: rgba(140, 184, 228, 0.781);
 }
