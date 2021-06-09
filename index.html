@@ -19,58 +19,44 @@
 
 <body>
 
-    <div>
-        <h1>Title</h1>
+    <div class="form">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" /><br />
+        <label for="name">Age</label>
+        <input type="text" name="name" id="name" /><br />
+        <button id="btn">Submit</button>
+        <div id="answer"></div>
     </div>
 
-
-
-    <label>Mass</label>
-    <input id="mass" placeholder="Enter Value"><br />
-    <label>Height</label>
-    <input id="height" placeholder="Enter Value"><br />
-    <button>Click Me</button>
-
-    <br />
-    <input id="targetInput" type="text" />
-
-    <p id="pData" style="color: blue"></p>
-
-
-    <div id="products"></div>
-    <script src="./commonData.js"></script>
-    <script src="./index.js"></script>
+    <h1></h1>
 
     <script>
+        const btn = document.getElementById('btn')
+        const name = document.getElementById('name')
+        const answer = document.getElementById('answer')
 
-
-        document.body.addEventListener("keypress", (aaa, bbb) => {
-            console.log(aaa, bbb)
-            alert(`Key Press ${aaa.keyCode} ${aaa.key} `)
-        })
-        const button = document.querySelector("button");
-        const mass = document.querySelector("#mass");
-        const height = document.querySelector("#height")
-        button.addEventListener('dblclick', (event) => {
-            const value = mass.value / height.value;
-            alert(`The BMI is ${value}`)
-        })
-
-
-        const targetInput = document.querySelector("#targetInput");
-        const ptarget = document.querySelector("#pData");
-        targetInput.addEventListener('input', (event) => {
-            ptarget.textContent = event.target.value
-        })
-
-        //blur keypress 
-
-
-
-        const clickMe = () => {
-            alert("Hey its clicked")
+        btn.onclick = (e) => {
+            e.preventDefault();
+            for (var letter of name.value.split('')) {
+                let newDiv = document.createElement('div')
+                newDiv.textContent = letter
+                let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+                console.log(randomColor)
+                newDiv.style.border = `5px solid #${randomColor}`
+                newDiv.style.display = 'inline'
+                newDiv.style.margin = '10px'
+                answer.appendChild(newDiv)
+            }
         }
+
+        const timeTarget = document.querySelector('h1')
+
+        setInterval(() => {
+            const currentDate = new Date();
+            timeTarget.textContent = `${currentDate.getHours()} : ${currentDate.getMinutes()} : ${currentDate.getSeconds()}`
+        }, 1000)
     </script>
+
 </body>
 
 </html>
