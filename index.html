@@ -23,9 +23,54 @@
         <h1>Title</h1>
     </div>
 
+
+
+    <label>Mass</label>
+    <input id="mass" placeholder="Enter Value"><br />
+    <label>Height</label>
+    <input id="height" placeholder="Enter Value"><br />
+    <button>Click Me</button>
+
+    <br />
+    <input id="targetInput" type="text" />
+
+    <p id="pData" style="color: blue"></p>
+
+
     <div id="products"></div>
     <script src="./commonData.js"></script>
     <script src="./index.js"></script>
+
+    <script>
+
+
+        document.body.addEventListener("keypress", (aaa, bbb) => {
+            console.log(aaa, bbb)
+            alert(`Key Press ${aaa.keyCode} ${aaa.key} `)
+        })
+        const button = document.querySelector("button");
+        const mass = document.querySelector("#mass");
+        const height = document.querySelector("#height")
+        button.addEventListener('dblclick', (event) => {
+            const value = mass.value / height.value;
+            alert(`The BMI is ${value}`)
+        })
+
+
+        const targetInput = document.querySelector("#targetInput");
+        const ptarget = document.querySelector("#pData");
+        targetInput.addEventListener('input', (event) => {
+            ptarget.textContent = event.target.value
+        })
+
+        //blur keypress 
+
+
+
+        const clickMe = () => {
+            alert("Hey its clicked")
+        }
+    </script>
 </body>
 
 </html>
